@@ -6,19 +6,19 @@ export default function About({ onOpenAboutModal }) {
     {
       title: 'Quality First',
       description: 'High-quality pharmaceutical solutions designed around stringent standards.',
-      icon: <ShieldCheck size={24} color="var(--color-primary-blue)" />,
+      icon: <ShieldCheck size={22} color="var(--color-primary-blue)" />,
       bg: 'rgba(11, 77, 162, 0.08)',
     },
     {
       title: 'Trusted Partnerships',
       description: 'Building lasting relationships with healthcare professionals, hospitals, distributors, and global partners.',
-      icon: <Handshake size={24} color="var(--color-primary-cyan)" />,
+      icon: <Handshake size={22} color="var(--color-primary-cyan)" />,
       bg: 'rgba(0, 155, 176, 0.08)',
     },
     {
       title: 'Affordable Healthcare',
       description: 'Working to make essential healthcare solutions more accessible.',
-      icon: <HeartHandshake size={24} color="var(--color-primary-green)" />,
+      icon: <HeartHandshake size={22} color="var(--color-primary-green)" />,
       bg: 'rgba(0, 158, 82, 0.08)',
     },
   ];
@@ -27,7 +27,7 @@ export default function About({ onOpenAboutModal }) {
     <section
       id="about"
       style={{
-        padding: '6rem 0',
+        padding: '5rem 0',
         background: '#FFFFFF',
         position: 'relative',
       }}
@@ -36,14 +36,14 @@ export default function About({ onOpenAboutModal }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '4rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
+            gap: '3rem',
             alignItems: 'center',
-            marginBottom: '4rem',
+            marginBottom: '3rem',
           }}
         >
           {/* Left Column Image & Location Badges */}
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', width: '100%' }}>
             <div
               style={{
                 position: 'relative',
@@ -58,7 +58,7 @@ export default function About({ onOpenAboutModal }) {
                 alt="Zirdilia Life Science Laboratory & Operations"
                 style={{
                   width: '100%',
-                  height: '460px',
+                  height: 'clamp(280px, 40vh, 420px)',
                   objectFit: 'cover',
                   display: 'block',
                 }}
@@ -75,37 +75,35 @@ export default function About({ onOpenAboutModal }) {
               <div
                 style={{
                   position: 'absolute',
-                  bottom: '1.5rem',
-                  left: '1.5rem',
-                  right: '1.5rem',
+                  bottom: '1rem',
+                  left: '1rem',
+                  right: '1rem',
                   background: 'rgba(255, 255, 255, 0.95)',
                   backdropFilter: 'blur(16px)',
-                  padding: '1.25rem',
+                  padding: '1rem',
                   borderRadius: 'var(--radius-md)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-around',
-                  boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.12)',
                   border: '1px solid rgba(255, 255, 255, 0.8)',
                   flexWrap: 'wrap',
-                  gap: '0.75rem',
+                  gap: '0.6rem',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <Building2 size={20} color="var(--color-primary-blue)" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Building2 size={18} color="var(--color-primary-blue)" style={{ flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600' }}>Headquarters</div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-main)' }}>Mumbai, India</div>
+                    <div style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontWeight: '600' }}>Headquarters</div>
+                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--text-main)' }}>Mumbai, India</div>
                   </div>
                 </div>
 
-                <div style={{ height: '30px', width: '1px', background: 'rgba(0,0,0,0.1)' }} />
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <MapPin size={20} color="var(--color-primary-cyan)" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <MapPin size={18} color="var(--color-primary-cyan)" style={{ flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '600' }}>Operational Office</div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-main)' }}>Kerala, India</div>
+                    <div style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontWeight: '600' }}>Operational Office</div>
+                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--text-main)' }}>Kerala, India</div>
                   </div>
                 </div>
               </div>
@@ -121,18 +119,18 @@ export default function About({ onOpenAboutModal }) {
               <span className="text-gradient">Powered by trust.</span>
             </h2>
 
-            <p style={{ fontSize: '1.08rem', color: 'var(--text-body)', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+            <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.1rem' }}>
               At Zirdilia Life Science, we believe that every individual deserves access to safe, effective, and affordable healthcare. Established with the vision of improving lives through science and innovation, we specialize in the marketing and distribution of high-quality generic pharmaceutical products.
             </p>
 
-            <p style={{ fontSize: '1.08rem', color: 'var(--text-body)', lineHeight: 1.75, marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
               Based in Mumbai with our operational office in Kerala, we work closely with healthcare professionals, hospitals, distributors, and international partners to ensure reliable medicines reach the people who need them most.
             </p>
 
             <button
               onClick={onOpenAboutModal}
               className="btn btn-primary"
-              style={{ padding: '0.85rem 1.8rem' }}
+              style={{ padding: '0.85rem 1.6rem' }}
             >
               Learn More About Us
               <ArrowRight size={18} />
@@ -144,9 +142,9 @@ export default function About({ onOpenAboutModal }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.75rem',
-            marginTop: '2rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1.5rem',
+            marginTop: '1.5rem',
           }}
         >
           {highlights.map((card, idx) => (
@@ -154,33 +152,31 @@ export default function About({ onOpenAboutModal }) {
               key={idx}
               className="glass-card"
               style={{
-                padding: '2rem',
+                padding: '1.5rem',
                 borderRadius: 'var(--radius-lg)',
                 transition: 'all 0.35s ease',
-                position: 'relative',
-                overflow: 'hidden',
               }}
             >
               <div
                 style={{
-                  width: '52px',
-                  height: '52px',
+                  width: '46px',
+                  height: '46px',
                   borderRadius: 'var(--radius-md)',
                   background: card.bg,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.25rem',
+                  marginBottom: '1rem',
                 }}
               >
                 {card.icon}
               </div>
 
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.6rem', color: 'var(--text-main)' }}>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
                 {card.title}
               </h3>
 
-              <p style={{ fontSize: '0.975rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.925rem', color: 'var(--text-body)', lineHeight: 1.55 }}>
                 {card.description}
               </p>
             </div>
