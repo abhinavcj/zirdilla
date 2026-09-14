@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, MapPin, ArrowUp, ShieldCheck } from 'lucide-react';
+import { Building2, ArrowUp, ShieldCheck, Mail, PhoneCall, FileText } from 'lucide-react';
 
 export default function Footer({ onOpenPolicyModal }) {
   const scrollToTop = () => {
@@ -59,7 +59,7 @@ export default function Footer({ onOpenPolicyModal }) {
             </p>
 
             <p style={{ fontSize: '0.925rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '320px', marginBottom: '1.5rem' }}>
-              Dedicated to manufacturing awareness, strategic generic medicine distribution, and nutritional solutions committed to quality and trust.
+              Dedicated to generic medicine distribution and nutritional formulations committed to quality and trust.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#38BDF8' }}>
@@ -83,7 +83,7 @@ export default function Footer({ onOpenPolicyModal }) {
                       const targetId = link.href.replace('#', '');
                       const el = document.getElementById(targetId);
                       if (el) {
-                        const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                        const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 80;
                         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                       }
                     }}
@@ -103,32 +103,45 @@ export default function Footer({ onOpenPolicyModal }) {
             </ul>
           </div>
 
-          {/* Column 3: Corporate Presence */}
+          {/* Column 3: Corporate Headquarters Details */}
           <div>
             <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.25rem' }}>
-              Corporate Offices
+              Corporate Headquarters
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                 <Building2 size={20} color="#38BDF8" style={{ marginTop: '0.2rem', flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: '0.85rem', color: '#64748B', fontWeight: '600' }}>HEADQUARTERS</div>
-                  <div style={{ fontSize: '0.975rem', color: '#FFFFFF', fontWeight: '600' }}>Mumbai, Maharashtra, India</div>
+                  <div style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: '700', marginBottom: '0.25rem' }}>
+                    Thiruvananthapuram, Kerala, India
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#94A3B8', lineHeight: 1.5 }}>
+                    Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                  </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                <MapPin size={20} color="#34D399" style={{ marginTop: '0.2rem', flexShrink: 0 }} />
-                <div>
-                  <div style={{ fontSize: '0.85rem', color: '#64748B', fontWeight: '600' }}>OPERATIONAL OFFICE</div>
-                  <div style={{ fontSize: '0.975rem', color: '#FFFFFF', fontWeight: '600' }}>Kerala, India</div>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem' }}>
+                <FileText size={16} color="#34D399" style={{ flexShrink: 0 }} />
+                <span style={{ color: '#CBD5E1' }}>GSTIN: <strong style={{ color: '#FFFFFF' }}>32AADCZ1580A1ZS</strong></span>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem' }}>
+                <Mail size={16} color="#38BDF8" style={{ flexShrink: 0 }} />
+                <a href="mailto:zirdilialifescience@gmail.com" style={{ color: '#38BDF8', textDecoration: 'none' }}>
+                  zirdilialifescience@gmail.com
+                </a>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem' }}>
+                <PhoneCall size={16} color="#34D399" style={{ flexShrink: 0 }} />
+                <span style={{ color: '#CBD5E1' }}>+91 7907706086 / +91 7012853890</span>
               </div>
             </div>
 
             <div
               style={{
-                marginTop: '1.5rem',
+                marginTop: '1.25rem',
                 padding: '0.75rem 1rem',
                 borderRadius: 'var(--radius-md)',
                 background: 'rgba(255, 255, 255, 0.05)',
@@ -137,7 +150,7 @@ export default function Footer({ onOpenPolicyModal }) {
                 color: '#CBD5E1',
               }}
             >
-              Headquartered in Mumbai | Operational Office in Kerala
+              Headquartered in Kerala, India
             </div>
           </div>
         </div>

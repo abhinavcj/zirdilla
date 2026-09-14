@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, CheckCircle, ArrowRight, Shield, Award, Globe, Layers } from 'lucide-react';
+import { TrendingUp, Shield, Award, Globe, Layers } from 'lucide-react';
 
 export default function QualityFuture() {
   const roadmapSteps = [
@@ -10,7 +10,6 @@ export default function QualityFuture() {
       description: 'Gastroenterology, vitamins, and essential generic formulations delivering immediate healthcare value.',
       icon: <Layers size={22} color="var(--color-primary-blue)" />,
       badgeColor: 'var(--color-primary-blue)',
-      active: true,
     },
     {
       phase: 'Growth',
@@ -19,7 +18,6 @@ export default function QualityFuture() {
       description: 'Broadening reach into new therapeutic categories and enhanced formulations.',
       icon: <TrendingUp size={22} color="var(--color-primary-cyan)" />,
       badgeColor: 'var(--color-primary-cyan)',
-      active: false,
     },
     {
       phase: 'Excellence',
@@ -28,7 +26,6 @@ export default function QualityFuture() {
       description: 'Targeting alignment with global regulatory frameworks (WHO-GMP, ISO, CDSCO, FSSAI, US FDA targets).',
       icon: <Award size={22} color="var(--color-primary-green)" />,
       badgeColor: 'var(--color-primary-green)',
-      active: false,
     },
     {
       phase: 'Global',
@@ -37,7 +34,6 @@ export default function QualityFuture() {
       description: 'Forming strategic cross-border healthcare and distribution alliances across emerging and global markets.',
       icon: <Globe size={22} color="#0284C7" />,
       badgeColor: '#0284C7',
-      active: false,
     },
   ];
 
@@ -113,7 +109,7 @@ export default function QualityFuture() {
               zIndex: 2,
             }}
           >
-            {roadmapSteps.map((step, idx) => (
+            {roadmapSteps.map((step) => (
               <div
                 key={step.phase}
                 className="glass-card"
@@ -121,15 +117,13 @@ export default function QualityFuture() {
                   padding: '2.25rem 1.5rem',
                   borderRadius: 'var(--radius-xl)',
                   background: '#FFFFFF',
-                  border: step.active
-                    ? `2px solid ${step.badgeColor}`
-                    : '1px solid rgba(11, 77, 162, 0.1)',
-                  boxShadow: step.active ? 'var(--shadow-md)' : 'var(--shadow-sm)',
+                  border: '1px solid rgba(11, 77, 162, 0.12)',
+                  boxShadow: 'var(--shadow-sm)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  transition: 'transform 0.3s ease',
+                  transition: 'all 0.3s ease',
                 }}
               >
                 {/* Node Pill */}
@@ -138,14 +132,14 @@ export default function QualityFuture() {
                     width: '56px',
                     height: '56px',
                     borderRadius: '50%',
-                    background: step.active ? step.badgeColor : '#FFFFFF',
-                    border: `3px solid ${step.badgeColor}`,
-                    color: step.active ? '#FFFFFF' : step.badgeColor,
+                    background: '#FFFFFF',
+                    border: `2px solid ${step.badgeColor}`,
+                    color: step.badgeColor,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '1.25rem',
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.06)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
                   }}
                 >
                   {step.icon}

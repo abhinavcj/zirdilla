@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MapPin, Building2, Mail, PhoneCall, CheckCircle2, Sparkles, Handshake } from 'lucide-react';
+import { Send, MapPin, Building2, Mail, PhoneCall, CheckCircle2, Handshake, FileText } from 'lucide-react';
 
 export default function Contact({ onSubmitSuccess }) {
   const [formData, setFormData] = useState({
@@ -23,7 +23,6 @@ export default function Contact({ onSubmitSuccess }) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate clean network request
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -64,12 +63,12 @@ export default function Contact({ onSubmitSuccess }) {
             alignItems: 'start',
           }}
         >
-          {/* Left Column Contact Information & Locations */}
+          {/* Left Column Contact Information & Headquarters Details */}
           <div>
             <div
               className="glass-card"
               style={{
-                padding: '2.5rem',
+                padding: '2.25rem',
                 borderRadius: 'var(--radius-xl)',
                 background: '#FFFFFF',
                 border: '1px solid rgba(11, 77, 162, 0.12)',
@@ -77,11 +76,11 @@ export default function Contact({ onSubmitSuccess }) {
                 marginBottom: '2rem',
               }}
             >
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
-                Corporate Locations
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
+                Corporate Headquarters
               </h3>
 
-              {/* Mumbai HQ */}
+              {/* Headquarters & Address */}
               <div
                 style={{
                   display: 'flex',
@@ -107,65 +106,56 @@ export default function Contact({ onSubmitSuccess }) {
                   <Building2 size={22} color="var(--color-primary-blue)" />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-primary-blue)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Headquarters
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary-blue)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Registered Address
                   </div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)', marginTop: '0.2rem' }}>
-                    Mumbai, Maharashtra
+                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.2rem', marginBottom: '0.4rem' }}>
+                    Thiruvananthapuram, Kerala, India
                   </div>
-                  <div style={{ fontSize: '0.925rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-                    India — Corporate Strategic Hub
+                  <div style={{ fontSize: '0.925rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                    Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
                   </div>
                 </div>
               </div>
 
-              {/* Kerala Operational Office */}
+              {/* GSTIN Details */}
               <div
                 style={{
                   display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '1rem',
-                  paddingBottom: '1.5rem',
-                  borderBottom: '1px solid rgba(0,0,0,0.06)',
+                  alignItems: 'center',
+                  gap: '0.85rem',
+                  padding: '0.85rem 1rem',
+                  borderRadius: 'var(--radius-md)',
+                  background: 'rgba(11, 77, 162, 0.04)',
+                  border: '1px solid rgba(11, 77, 162, 0.1)',
                   marginBottom: '1.5rem',
                 }}
               >
-                <div
-                  style={{
-                    width: '46px',
-                    height: '46px',
-                    borderRadius: 'var(--radius-md)',
-                    background: 'rgba(0, 155, 176, 0.08)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <MapPin size={22} color="var(--color-primary-cyan)" />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-primary-cyan)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Operational Office
-                  </div>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)', marginTop: '0.2rem' }}>
-                    Kerala, India
-                  </div>
-                  <div style={{ fontSize: '0.925rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-                    Distribution & Logistics Center
-                  </div>
+                <FileText size={18} color="var(--color-primary-blue)" style={{ flexShrink: 0 }} />
+                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>GSTIN: </span> 32AADCZ1580A1ZS
                 </div>
               </div>
 
-              {/* Direct Enquiry Placeholders */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              {/* Contact Info (Email & Phone) */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-body)' }}>
-                  <Mail size={18} color="var(--color-primary-green)" />
-                  <span>contact@zirdilialifescience.com</span>
+                  <Mail size={18} color="var(--color-primary-cyan)" style={{ flexShrink: 0 }} />
+                  <a href="mailto:zirdilialifescience@gmail.com" style={{ color: 'var(--color-primary-blue)', textDecoration: 'none', fontWeight: 600 }}>
+                    zirdilialifescience@gmail.com
+                  </a>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-body)' }}>
-                  <PhoneCall size={18} color="var(--color-primary-green)" />
-                  <span>+91 (022) ZIRDILIA / +91 (Kerala Office)</span>
+
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-body)' }}>
+                  <PhoneCall size={18} color="var(--color-primary-green)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                    <a href="tel:+917907706086" style={{ color: 'var(--text-main)', textDecoration: 'none', fontWeight: 600 }}>
+                      +91 7907706086
+                    </a>
+                    <a href="tel:+917012853890" style={{ color: 'var(--text-main)', textDecoration: 'none', fontWeight: 600 }}>
+                      +91 7012853890
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -173,7 +163,7 @@ export default function Contact({ onSubmitSuccess }) {
             {/* Partnerships Banner Card */}
             <div
               style={{
-                padding: '2rem',
+                padding: '1.75rem',
                 borderRadius: 'var(--radius-xl)',
                 background: 'var(--gradient-brand-subtle)',
                 border: '1px solid rgba(0, 155, 176, 0.2)',
@@ -184,8 +174,8 @@ export default function Contact({ onSubmitSuccess }) {
             >
               <div
                 style={{
-                  width: '48px',
-                  height: '48px',
+                  width: '46px',
+                  height: '46px',
                   borderRadius: '50%',
                   background: 'rgba(0, 158, 82, 0.12)',
                   display: 'flex',
@@ -194,14 +184,14 @@ export default function Contact({ onSubmitSuccess }) {
                   flexShrink: 0,
                 }}
               >
-                <Handshake size={24} color="var(--color-primary-green)" />
+                <Handshake size={22} color="var(--color-primary-green)" />
               </div>
               <div>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-main)' }}>
                   Strategic Alliances Welcome
                 </h4>
                 <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', margin: 0 }}>
-                  We actively collaborate with healthcare institutions, global suppliers, and healthcare professionals.
+                  We actively collaborate with healthcare institutions, suppliers, and healthcare professionals.
                 </p>
               </div>
             </div>
@@ -212,7 +202,7 @@ export default function Contact({ onSubmitSuccess }) {
             <div
               className="glass-card"
               style={{
-                padding: '2.5rem',
+                padding: '2.25rem',
                 borderRadius: 'var(--radius-xl)',
                 background: '#FFFFFF',
                 border: '1px solid rgba(11, 77, 162, 0.12)',
@@ -322,7 +312,7 @@ export default function Contact({ onSubmitSuccess }) {
                         type="email"
                         name="email"
                         required
-                        placeholder="name@organization.com"
+                        placeholder="zirdilialifescience@gmail.com"
                         value={formData.email}
                         onChange={handleChange}
                         style={{
@@ -344,7 +334,7 @@ export default function Contact({ onSubmitSuccess }) {
                       <input
                         type="tel"
                         name="phone"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 7907706086"
                         value={formData.phone}
                         onChange={handleChange}
                         style={{

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ShieldCheck, Activity, Stethoscope, Pill, CheckCircle2, ArrowRight, Building2, MapPin } from 'lucide-react';
+import { X, Activity, Stethoscope, Pill, CheckCircle2, ArrowRight, Building2, FileText, Mail, PhoneCall } from 'lucide-react';
 
 export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
   if (!isOpen) return null;
@@ -43,7 +43,7 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
       keyFeatures: [
         'High-accessibility essential therapeutic categories',
         'Affordable pricing structures to expand healthcare access',
-        'Reliable supply chain from Mumbai HQ and Kerala operations',
+        'Reliable supply chain from our headquarters in Kerala',
         'Strict batch-to-batch consistency and packaging protection',
       ],
     },
@@ -207,14 +207,14 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
           }}
         >
           <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            For portfolio distribution enquiries, contact our trade desk.
+            For portfolio distribution enquiries, email zirdilialifescience@gmail.com
           </div>
           <button
             onClick={() => {
               onClose();
               const el = document.getElementById('contact');
               if (el) {
-                const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 80;
                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
               }
             }}
@@ -303,13 +303,13 @@ export function AboutModal({ isOpen, onClose }) {
           </p>
 
           <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
-            Based in Mumbai with our operational office in Kerala, we work closely with healthcare professionals, hospitals, distributors, and international partners to ensure reliable medicines reach the people who need them most.
+            Headquartered in Kerala, India, we work closely with healthcare professionals, hospitals, distributors, and international partners to ensure reliable medicines reach the people who need them most.
           </p>
 
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              display: 'flex',
+              flexDirection: 'column',
               gap: '1rem',
               padding: '1.5rem',
               borderRadius: 'var(--radius-lg)',
@@ -317,20 +317,30 @@ export function AboutModal({ isOpen, onClose }) {
               border: '1px solid rgba(11, 77, 162, 0.1)',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <Building2 size={24} color="var(--color-primary-blue)" />
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem' }}>
+              <Building2 size={24} color="var(--color-primary-blue)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
               <div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)' }}>HEADQUARTERS</div>
-                <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-main)' }}>Mumbai, India</div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary-blue)', textTransform: 'uppercase' }}>CORPORATE HEADQUARTERS</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Thiruvananthapuram, Kerala, India</div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.25rem', lineHeight: 1.5 }}>
+                  Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                </div>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <MapPin size={24} color="var(--color-primary-cyan)" />
-              <div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)' }}>OPERATIONAL OFFICE</div>
-                <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-main)' }}>Kerala, India</div>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem' }}>
+              <FileText size={18} color="var(--color-primary-green)" style={{ flexShrink: 0 }} />
+              <span style={{ color: 'var(--text-main)', fontWeight: 700 }}>GSTIN: 32AADCZ1580A1ZS</span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem' }}>
+              <Mail size={18} color="var(--color-primary-cyan)" style={{ flexShrink: 0 }} />
+              <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>zirdilialifescience@gmail.com</span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem' }}>
+              <PhoneCall size={18} color="var(--color-primary-green)" style={{ flexShrink: 0 }} />
+              <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>+91 7907706086 / +91 7012853890</span>
             </div>
           </div>
         </div>
@@ -381,13 +391,13 @@ export function PolicyModal({ isOpen, onClose, type = 'privacy' }) {
             Zirdilia Life Science (“Company”, “we”, “us”) is committed to protecting your privacy and ensuring responsible data governance. This document outlines general operational guidelines regarding communications and website use.
           </p>
           <p style={{ marginBottom: '1rem' }}>
-            1. Information Collection: We collect information provided voluntarily via our inquiry form for responding to partnership or product queries.
+            1. Information Collection: We collect information provided voluntarily via our inquiry form or direct email (zirdilialifescience@gmail.com) for responding to partnership or product queries.
           </p>
           <p style={{ marginBottom: '1rem' }}>
             2. Medical Disclaimer: Content on this site is provided for general informational and corporate overview purposes only and does not constitute medical advice or clinical prescribing instructions.
           </p>
           <p>
-            3. Regulatory Notice: Certifications mentioned are part of our future strategic compliance roadmap.
+            3. Corporate Identification: Zirdilia Life Science, Headquartered in Kerala, India (GSTIN: 32AADCZ1580A1ZS).
           </p>
         </div>
       </div>
