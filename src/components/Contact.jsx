@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MapPin, Building2, Mail, PhoneCall, CheckCircle2, Handshake, FileText } from 'lucide-react';
+import { Send, MapPin, Building2, Mail, PhoneCall, CheckCircle2, Handshake, FileText, Truck } from 'lucide-react';
 
 export default function Contact({ onSubmitSuccess }) {
   const [formData, setFormData] = useState({
@@ -63,7 +63,7 @@ export default function Contact({ onSubmitSuccess }) {
             alignItems: 'start',
           }}
         >
-          {/* Left Column Contact Information & Headquarters Details */}
+          {/* Left Column Contact Information & Locations */}
           <div>
             <div
               className="glass-card"
@@ -77,7 +77,7 @@ export default function Contact({ onSubmitSuccess }) {
               }}
             >
               <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '1.5rem' }}>
-                Corporate Headquarters
+                Corporate Offices & Location
               </h3>
 
               {/* Headquarters & Address */}
@@ -86,15 +86,15 @@ export default function Contact({ onSubmitSuccess }) {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '1rem',
-                  paddingBottom: '1.5rem',
+                  paddingBottom: '1.25rem',
                   borderBottom: '1px solid rgba(0,0,0,0.06)',
-                  marginBottom: '1.5rem',
+                  marginBottom: '1.25rem',
                 }}
               >
                 <div
                   style={{
-                    width: '46px',
-                    height: '46px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: 'var(--radius-md)',
                     background: 'rgba(11, 77, 162, 0.08)',
                     display: 'flex',
@@ -107,13 +107,48 @@ export default function Contact({ onSubmitSuccess }) {
                 </div>
                 <div>
                   <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary-blue)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Registered Address
+                    Headquarters
                   </div>
-                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.2rem', marginBottom: '0.4rem' }}>
-                    Thiruvananthapuram, Kerala, India
+                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem', marginBottom: '0.3rem' }}>
+                    Kerala, India
                   </div>
-                  <div style={{ fontSize: '0.925rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.55 }}>
                     Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                  </div>
+                </div>
+              </div>
+
+              {/* Operational Office */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '1rem',
+                  paddingBottom: '1.25rem',
+                  borderBottom: '1px solid rgba(0,0,0,0.06)',
+                  marginBottom: '1.25rem',
+                }}
+              >
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: 'var(--radius-md)',
+                    background: 'rgba(0, 155, 176, 0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                  }}
+                >
+                  <Truck size={22} color="var(--color-primary-cyan)" />
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary-cyan)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Operational Office
+                  </div>
+                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>
+                    Kerala, India <span style={{ fontSize: '0.85rem', color: 'var(--color-primary-blue)', fontWeight: '600' }}>(CFA & Logistics Center)</span>
                   </div>
                 </div>
               </div>
@@ -128,7 +163,7 @@ export default function Contact({ onSubmitSuccess }) {
                   borderRadius: 'var(--radius-md)',
                   background: 'rgba(11, 77, 162, 0.04)',
                   border: '1px solid rgba(11, 77, 162, 0.1)',
-                  marginBottom: '1.5rem',
+                  marginBottom: '1.25rem',
                 }}
               >
                 <FileText size={18} color="var(--color-primary-blue)" style={{ flexShrink: 0 }} />
@@ -138,7 +173,7 @@ export default function Contact({ onSubmitSuccess }) {
               </div>
 
               {/* Contact Info (Email & Phone) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-body)' }}>
                   <Mail size={18} color="var(--color-primary-cyan)" style={{ flexShrink: 0 }} />
                   <a href="mailto:zirdilialifescience@gmail.com" style={{ color: 'var(--color-primary-blue)', textDecoration: 'none', fontWeight: 600 }}>

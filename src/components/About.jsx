@@ -80,35 +80,30 @@ export default function About({ onOpenAboutModal }) {
                   right: '1rem',
                   background: 'rgba(255, 255, 255, 0.95)',
                   backdropFilter: 'blur(16px)',
-                  padding: '1rem 1.25rem',
+                  padding: '1rem',
                   borderRadius: 'var(--radius-md)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.85rem',
+                  justifyContent: 'space-around',
                   boxShadow: '0 10px 25px rgba(0,0,0,0.12)',
                   border: '1px solid rgba(255, 255, 255, 0.8)',
+                  flexWrap: 'wrap',
+                  gap: '0.6rem',
                 }}
               >
-                <div
-                  style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: 'var(--radius-md)',
-                    background: 'rgba(11, 77, 162, 0.08)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <Building2 size={22} color="var(--color-primary-blue)" />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--color-primary-blue)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Corporate Headquarters
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Building2 size={18} color="var(--color-primary-blue)" style={{ flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontWeight: '600' }}>Headquarters</div>
+                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--text-main)' }}>Kerala, India</div>
                   </div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-main)' }}>
-                    Thiruvananthapuram, Kerala, India
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <MapPin size={18} color="var(--color-primary-cyan)" style={{ flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontWeight: '600' }}>Operational Office</div>
+                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--text-main)' }}>Kerala, India (CFA & Logistics)</div>
                   </div>
                 </div>
               </div>
@@ -129,7 +124,7 @@ export default function About({ onOpenAboutModal }) {
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
-              Headquartered in Kerala, India, we work closely with healthcare professionals, hospitals, distributors, and international partners to ensure reliable medicines reach the people who need them most.
+              Headquartered in Kerala, India with our Operational Office (CFA & Logistics Center), we work closely with healthcare professionals, hospitals, distributors, and partners to ensure reliable medicines reach the people who need them most.
             </p>
 
             <button

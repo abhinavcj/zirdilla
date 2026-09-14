@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, ArrowUp, ShieldCheck, Mail, PhoneCall, FileText } from 'lucide-react';
+import { Building2, ArrowUp, ShieldCheck, Mail, PhoneCall, FileText, Truck } from 'lucide-react';
 
 export default function Footer({ onOpenPolicyModal }) {
   const scrollToTop = () => {
@@ -106,17 +106,28 @@ export default function Footer({ onOpenPolicyModal }) {
           {/* Column 3: Corporate Headquarters Details */}
           <div>
             <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.25rem' }}>
-              Corporate Headquarters
+              Corporate Offices
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                 <Building2 size={20} color="#38BDF8" style={{ marginTop: '0.2rem', flexShrink: 0 }} />
                 <div>
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: '700', textTransform: 'uppercase' }}>HEADQUARTERS</div>
                   <div style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: '700', marginBottom: '0.25rem' }}>
-                    Thiruvananthapuram, Kerala, India
+                    Kerala, India
                   </div>
                   <div style={{ fontSize: '0.85rem', color: '#94A3B8', lineHeight: 1.5 }}>
                     Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <Truck size={20} color="#34D399" style={{ marginTop: '0.2rem', flexShrink: 0 }} />
+                <div>
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: '700', textTransform: 'uppercase' }}>OPERATIONAL OFFICE</div>
+                  <div style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: '700' }}>
+                    Kerala, India (CFA & Logistics Center)
                   </div>
                 </div>
               </div>
@@ -150,7 +161,7 @@ export default function Footer({ onOpenPolicyModal }) {
                 color: '#CBD5E1',
               }}
             >
-              Headquartered in Kerala, India
+              Headquarters: Kerala, India | Operational Office (CFA & Logistics Center)
             </div>
           </div>
         </div>

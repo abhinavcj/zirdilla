@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Activity, Stethoscope, Pill, CheckCircle2, ArrowRight, Building2, FileText, Mail, PhoneCall } from 'lucide-react';
+import { X, Activity, Stethoscope, Pill, CheckCircle2, ArrowRight, Building2, FileText, Mail, PhoneCall, Truck } from 'lucide-react';
 
 export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
   if (!isOpen) return null;
@@ -303,14 +303,14 @@ export function AboutModal({ isOpen, onClose }) {
           </p>
 
           <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '1.75rem' }}>
-            Headquartered in Kerala, India, we work closely with healthcare professionals, hospitals, distributors, and international partners to ensure reliable medicines reach the people who need them most.
+            Headquartered in Kerala, India with our Operational Office (CFA & Logistics Center), we work closely with healthcare professionals, hospitals, distributors, and international partners to ensure reliable medicines reach the people who need them most.
           </p>
 
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '1rem',
+              gap: '1.25rem',
               padding: '1.5rem',
               borderRadius: 'var(--radius-lg)',
               background: 'var(--bg-secondary)',
@@ -320,11 +320,19 @@ export function AboutModal({ isOpen, onClose }) {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem' }}>
               <Building2 size={24} color="var(--color-primary-blue)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
               <div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary-blue)', textTransform: 'uppercase' }}>CORPORATE HEADQUARTERS</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Thiruvananthapuram, Kerala, India</div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary-blue)', textTransform: 'uppercase' }}>HEADQUARTERS</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Kerala, India</div>
                 <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.25rem', lineHeight: 1.5 }}>
                   Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
                 </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.85rem' }}>
+              <Truck size={24} color="var(--color-primary-cyan)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+              <div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary-cyan)', textTransform: 'uppercase' }}>OPERATIONAL OFFICE</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Kerala, India (CFA & Logistics Center)</div>
               </div>
             </div>
 
@@ -397,7 +405,7 @@ export function PolicyModal({ isOpen, onClose, type = 'privacy' }) {
             2. Medical Disclaimer: Content on this site is provided for general informational and corporate overview purposes only and does not constitute medical advice or clinical prescribing instructions.
           </p>
           <p>
-            3. Corporate Identification: Zirdilia Life Science, Headquartered in Kerala, India (GSTIN: 32AADCZ1580A1ZS).
+            3. Corporate Identification: Zirdilia Life Science, Headquartered in Kerala, India with Operational Office (CFA & Logistics Center), GSTIN: 32AADCZ1580A1ZS.
           </p>
         </div>
       </div>
