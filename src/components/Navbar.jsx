@@ -8,7 +8,7 @@ export default function Navbar({ onOpenProductsModal }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -50,7 +50,7 @@ export default function Navbar({ onOpenProductsModal }) {
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
     if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 90;
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -60,6 +60,7 @@ export default function Navbar({ onOpenProductsModal }) {
 
   return (
     <header
+      className={`main-header ${scrolled ? 'is-scrolled' : ''}`}
       style={{
         position: 'fixed',
         top: 0,
@@ -68,15 +69,15 @@ export default function Navbar({ onOpenProductsModal }) {
         zIndex: 1000,
         transition: 'all 0.35s ease',
         background: scrolled
-          ? 'rgba(255, 255, 255, 0.94)'
-          : 'rgba(255, 255, 255, 0.75)',
+          ? 'rgba(255, 255, 255, 0.95)'
+          : 'rgba(255, 255, 255, 0.82)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         boxShadow: scrolled ? '0 10px 30px -10px rgba(11, 77, 162, 0.12)' : 'none',
         borderBottom: scrolled
           ? '1px solid rgba(11, 77, 162, 0.08)'
           : '1px solid rgba(255, 255, 255, 0.4)',
-        padding: scrolled ? '0.75rem 0' : '1.1rem 0',
+        padding: scrolled ? '0.6rem 0' : '0.9rem 0',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -85,8 +86,9 @@ export default function Navbar({ onOpenProductsModal }) {
           <img
             src="/pics/Zirdilia_Logo_New_Tagline_Transparent-1.png"
             alt="Zirdilia Life Science Logo"
+            className="brand-logo"
             style={{
-              height: scrolled ? '44px' : '52px',
+              height: scrolled ? '42px' : '48px',
               width: 'auto',
               transition: 'height 0.3s ease',
               objectFit: 'contain'
@@ -139,13 +141,13 @@ export default function Navbar({ onOpenProductsModal }) {
             onClick={() => {
               const el = document.getElementById('products');
               if (el) {
-                const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 80;
                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
               }
               if (onOpenProductsModal) onOpenProductsModal();
             }}
             className="btn btn-primary"
-            style={{ padding: '0.7rem 1.4rem', fontSize: '0.9rem' }}
+            style={{ padding: '0.65rem 1.35rem', fontSize: '0.875rem' }}
           >
             Explore Our Products
             <ArrowRight size={16} />
@@ -162,11 +164,11 @@ export default function Navbar({ onOpenProductsModal }) {
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-            padding: '0.5rem',
+            padding: '0.4rem',
             color: 'var(--text-main)',
           }}
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
@@ -181,10 +183,10 @@ export default function Navbar({ onOpenProductsModal }) {
             background: '#FFFFFF',
             boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
             borderBottom: '1px solid rgba(11, 77, 162, 0.1)',
-            padding: '1.5rem 1.5rem 2rem 1.5rem',
+            padding: '1.25rem 1.25rem 1.75rem 1.25rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.25rem',
+            gap: '1rem',
             animation: 'slideUp 0.3s ease forwards',
           }}
         >
@@ -195,12 +197,12 @@ export default function Navbar({ onOpenProductsModal }) {
               onClick={(e) => handleNavClick(e, link.href)}
               style={{
                 textDecoration: 'none',
-                fontSize: '1.05rem',
+                fontSize: '1rem',
                 fontWeight: '600',
                 color: activeSection === link.id ? 'var(--color-primary-blue)' : 'var(--text-main)',
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'space-between',
+                justifyContent: 'space-between',
                 padding: '0.5rem 0',
                 borderBottom: '1px solid rgba(0,0,0,0.05)',
               }}
@@ -215,13 +217,13 @@ export default function Navbar({ onOpenProductsModal }) {
               setMobileMenuOpen(false);
               const el = document.getElementById('products');
               if (el) {
-                const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 80;
                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
               }
               if (onOpenProductsModal) onOpenProductsModal();
             }}
             className="btn btn-primary"
-            style={{ width: '100%', marginTop: '0.5rem' }}
+            style={{ width: '100%', marginTop: '0.4rem' }}
           >
             Explore Our Products
             <ArrowRight size={16} />
@@ -234,6 +236,8 @@ export default function Navbar({ onOpenProductsModal }) {
         @media (max-width: 991px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: block !important; }
+          .main-header { padding: 0.5rem 0 !important; }
+          .brand-logo { height: 38px !important; }
         }
       `}</style>
     </header>

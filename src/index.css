@@ -198,6 +198,12 @@ input, select, textarea {
   font-size: 16px !important;
 }
 
+/* Section Specific Overrides */
+#hero {
+  padding-top: 8rem !important;
+  padding-bottom: 4rem !important;
+}
+
 /* Keyframe Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -231,6 +237,11 @@ input, select, textarea {
     padding: 4rem 0 !important;
   }
 
+  #hero {
+    padding-top: 7rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
   .timeline-connector {
     display: none !important;
   }
@@ -244,6 +255,11 @@ input, select, textarea {
 @media (max-width: 480px) {
   .container {
     padding: 0 0.9rem;
+  }
+
+  #hero {
+    padding-top: 6.75rem !important;
+    padding-bottom: 3rem !important;
   }
 
   .glass-card {
