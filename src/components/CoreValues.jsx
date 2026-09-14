@@ -8,35 +8,35 @@ export default function CoreValues() {
     {
       title: 'QUALITY',
       description: 'Excellence in every product and process.',
-      icon: (color) => <Award size={30} color={color} />,
+      icon: (color, size = 26) => <Award size={size} color={color} />,
       color: '#0B4DA2',
       accentBg: 'rgba(11, 77, 162, 0.08)',
     },
     {
       title: 'INTEGRITY',
       description: 'Ethical decisions that earn trust.',
-      icon: (color) => <ShieldCheck size={30} color={color} />,
+      icon: (color, size = 26) => <ShieldCheck size={size} color={color} />,
       color: '#009BB0',
       accentBg: 'rgba(0, 155, 176, 0.08)',
     },
     {
       title: 'TRANSPARENCY',
       description: 'Open, honest, and accountable relationships.',
-      icon: (color) => <Eye size={30} color={color} />,
+      icon: (color, size = 26) => <Eye size={size} color={color} />,
       color: '#009E52',
       accentBg: 'rgba(0, 158, 82, 0.08)',
     },
     {
       title: 'RELIABILITY',
-      description: 'Consistent performance healthcare professionals can depend on.',
-      icon: (color) => <Clock size={30} color={color} />,
+      description: 'Consistent performance healthcare professionals depend on.',
+      icon: (color, size = 26) => <Clock size={size} color={color} />,
       color: '#0284C7',
       accentBg: 'rgba(2, 132, 199, 0.08)',
     },
     {
       title: 'SUSTAINABILITY',
-      description: 'Creating long-term value for society, healthcare, and the environment.',
-      icon: (color) => <Leaf size={30} color={color} />,
+      description: 'Creating long-term value for society & healthcare.',
+      icon: (color, size = 26) => <Leaf size={size} color={color} />,
       color: '#10B981',
       accentBg: 'rgba(16, 185, 129, 0.08)',
     },
@@ -45,52 +45,49 @@ export default function CoreValues() {
   return (
     <section
       id="values"
+      className="core-values-section"
       style={{
-        padding: '6rem 0',
+        padding: '5rem 0',
         background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)',
         position: 'relative',
       }}
     >
       <div className="container">
         {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 4rem auto' }}>
-          <div className="section-label" style={{ margin: '0 auto 1rem auto' }}>
+        <div className="values-header" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3rem auto' }}>
+          <div className="section-label" style={{ margin: '0 auto 0.75rem auto' }}>
             CORE VALUES
           </div>
-          <h2 className="section-heading">What We Stand For</h2>
+          <h2 className="section-heading" style={{ marginBottom: '0.75rem' }}>What We Stand For</h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Our core values guide every interaction, decision, and solution we deliver to the healthcare ecosystem.
+            Our core values guide every interaction, decision, and solution we deliver.
           </p>
         </div>
 
-        {/* 5 Core Values Interactive Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '1.75rem',
-          }}
-        >
+        {/* 5 Core Values Cards Grid */}
+        <div className="values-grid">
           {values.map((val, idx) => {
             const isHovered = hoveredIndex === idx;
+            const isLast = idx === values.length - 1;
             return (
               <div
                 key={val.title}
+                className={`value-card ${isLast ? 'last-card' : ''}`}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{
-                  background: isHovered ? '#FFFFFF' : 'rgba(255, 255, 255, 0.85)',
+                  background: isHovered ? '#FFFFFF' : 'rgba(255, 255, 255, 0.9)',
                   backdropFilter: 'blur(12px)',
-                  padding: '2.25rem 1.75rem',
-                  borderRadius: 'var(--radius-xl)',
+                  padding: '1.5rem 1.25rem',
+                  borderRadius: 'var(--radius-lg)',
                   border: isHovered
                     ? `1px solid ${val.color}`
                     : '1px solid rgba(11, 77, 162, 0.1)',
                   boxShadow: isHovered
-                    ? `0 20px 35px -10px ${val.color}25`
+                    ? `0 12px 25px -5px ${val.color}20`
                     : 'var(--shadow-sm)',
-                  transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
-                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
+                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                   cursor: 'pointer',
                   display: 'flex',
                   flexDirection: 'column',
@@ -100,29 +97,29 @@ export default function CoreValues() {
               >
                 {/* Icon Circle */}
                 <div
+                  className="value-icon"
                   style={{
-                    width: '60px',
-                    height: '60px',
+                    width: '46px',
+                    height: '46px',
                     borderRadius: 'var(--radius-md)',
                     background: isHovered ? val.color : val.accentBg,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '1.5rem',
-                    transition: 'all 0.35s ease',
-                    transform: isHovered ? 'scale(1.08) rotate(3deg)' : 'scale(1)',
+                    marginBottom: '1rem',
+                    transition: 'all 0.3s ease',
                   }}
                 >
-                  {val.icon(isHovered ? '#FFFFFF' : val.color)}
+                  {val.icon(isHovered ? '#FFFFFF' : val.color, 22)}
                 </div>
 
                 <h3
                   style={{
-                    fontSize: '1.15rem',
+                    fontSize: '1rem',
                     fontWeight: 800,
                     letterSpacing: '0.04em',
                     color: isHovered ? val.color : 'var(--text-main)',
-                    marginBottom: '0.75rem',
+                    marginBottom: '0.4rem',
                     transition: 'color 0.3s ease',
                   }}
                 >
@@ -131,9 +128,9 @@ export default function CoreValues() {
 
                 <p
                   style={{
-                    fontSize: '0.95rem',
+                    fontSize: '0.875rem',
                     color: 'var(--text-body)',
-                    lineHeight: 1.6,
+                    lineHeight: 1.5,
                     margin: 0,
                   }}
                 >
@@ -145,11 +142,11 @@ export default function CoreValues() {
                   style={{
                     position: 'absolute',
                     bottom: 0,
-                    left: '1.75rem',
-                    right: '1.75rem',
-                    height: '3px',
+                    left: '1.25rem',
+                    right: '1.25rem',
+                    height: '2.5px',
                     background: val.color,
-                    borderRadius: '3px 3px 0 0',
+                    borderRadius: '2px 2px 0 0',
                     opacity: isHovered ? 1 : 0,
                     transition: 'opacity 0.3s ease',
                   }}
@@ -159,6 +156,49 @@ export default function CoreValues() {
           })}
         </div>
       </div>
+
+      {/* Grid CSS Rules */}
+      <style>{`
+        .values-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+          gap: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+          .core-values-section {
+            padding: 3.5rem 0 !important;
+          }
+          .values-header {
+            margin-bottom: 2rem !important;
+          }
+          .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.85rem;
+          }
+          .value-card {
+            padding: 1.1rem 0.9rem !important;
+          }
+          .value-card.last-card {
+            grid-column: span 2;
+          }
+          .value-icon {
+            width: 38px !important;
+            height: 38px !important;
+            margin-bottom: 0.65rem !important;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.65rem;
+          }
+          .value-card {
+            padding: 0.9rem 0.75rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
