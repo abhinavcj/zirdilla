@@ -198,7 +198,7 @@ export default function Hero({ onOpenProductsModal, onOpenAboutModal }) {
                 }}
               >
                 <img
-                  src="/pics/hero.jpg"
+                  src="/pics/hero1.jpg"
                   alt="Zirdilia Life Science Laboratory Research"
                   style={{
                     width: '100%',

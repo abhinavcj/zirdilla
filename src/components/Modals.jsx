@@ -64,8 +64,9 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.5rem',
+        padding: 'clamp(0.5rem, 3vw, 1.5rem)',
         animation: 'fadeIn 0.3s ease',
+        boxSizing: 'border-box',
       }}
       onClick={onClose}
     >
@@ -78,30 +79,33 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
           maxWidth: '850px',
           maxHeight: '90vh',
           overflowY: 'auto',
+          overflowX: 'hidden',
           boxShadow: '0 25px 50px rgba(0,0,0,0.25)',
           border: '1px solid rgba(11, 77, 162, 0.15)',
           position: 'relative',
+          boxSizing: 'border-box',
         }}
       >
         {/* Modal Header */}
         <div
           style={{
-            padding: '1.75rem 2rem',
+            padding: 'clamp(0.85rem, 3vw, 1.75rem) clamp(1rem, 4vw, 2rem)',
             borderBottom: '1px solid rgba(0,0,0,0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            gap: '0.75rem',
             position: 'sticky',
             top: 0,
             background: '#FFFFFF',
             zIndex: 10,
           }}
         >
-          <div>
-            <div className="section-label" style={{ marginBottom: '0.25rem', padding: '0.2rem 0.75rem', fontSize: '0.75rem' }}>
+          <div style={{ minWidth: 0, flex: 1 }}>
+            <div className="section-label" style={{ marginBottom: '0.25rem', padding: '0.2rem 0.75rem', fontSize: '0.7rem' }}>
               PORTFOLIO OVERVIEW
             </div>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', margin: 0 }}>
+            <h3 style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', fontWeight: 800, color: 'var(--text-main)', margin: 0, wordBreak: 'break-word' }}>
               Zirdilia Product Portfolio
             </h3>
           </div>
@@ -115,6 +119,8 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
               borderRadius: '50%',
               width: '36px',
               height: '36px',
+              minWidth: '36px',
+              flexShrink: 0,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -127,64 +133,61 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
         </div>
 
         {/* Modal Content */}
-        <div style={{ padding: '2rem' }}>
-          <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '2rem' }}>
+        <div style={{ padding: 'clamp(1rem, 4vw, 2rem)' }}>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '1.5rem', wordBreak: 'break-word' }}>
             Zirdilia Life Science focuses on gastroenterology, nutritional formulations, and high-quality generic pharmaceuticals designed around safety, quality, and affordability.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {filtered.map((item) => (
               <div
                 key={item.id}
                 style={{
                   background: 'var(--bg-secondary)',
                   borderRadius: 'var(--radius-lg)',
-                  padding: '1.75rem',
+                  padding: 'clamp(0.85rem, 3vw, 1.5rem)',
                   border: '1px solid rgba(11, 77, 162, 0.1)',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1rem' }}>
                   <div
                     style={{
-                      width: '42px',
-                      height: '42px',
+                      width: '40px',
+                      height: '40px',
+                      minWidth: '40px',
                       borderRadius: 'var(--radius-md)',
                       background: '#FFFFFF',
                       boxShadow: 'var(--shadow-sm)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      flexShrink: 0,
                     }}
                   >
                     {item.icon}
                   </div>
-                  <div>
-                    <h4 style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-main)' }}>
+                  <div style={{ minWidth: 0, flex: 1 }}>
+                    <h4 style={{ fontSize: 'clamp(0.95rem, 3vw, 1.15rem)', fontWeight: 700, color: 'var(--text-main)', margin: 0, wordBreak: 'break-word' }}>
                       {item.title}
                     </h4>
-                    <span style={{ fontSize: '0.875rem', color: 'var(--color-primary-blue)', fontWeight: 600 }}>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--color-primary-blue)', fontWeight: 600, display: 'block', marginTop: '0.2rem', wordBreak: 'break-word' }}>
                       {item.subtitle}
                     </span>
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                    gap: '1.5rem',
-                    marginTop: '1.25rem',
-                  }}
-                >
-                  <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.6 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>
                     {item.overview}
                   </p>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                     {item.keyFeatures.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: 'var(--text-main)' }}>
-                        <CheckCircle2 size={16} color="var(--color-primary-green)" style={{ flexShrink: 0 }} />
-                        <span>{feat}</span>
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-main)' }}>
+                        <CheckCircle2 size={15} color="var(--color-primary-green)" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
+                        <span style={{ wordBreak: 'break-word' }}>{feat}</span>
                       </div>
                     ))}
                   </div>
@@ -197,17 +200,19 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
         {/* Modal Footer */}
         <div
           style={{
-            padding: '1.25rem 2rem',
+            padding: 'clamp(0.85rem, 3vw, 1.25rem) clamp(1rem, 4vw, 2rem)',
             background: 'var(--bg-secondary)',
             borderTop: '1px solid rgba(0,0,0,0.06)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             borderRadius: '0 0 var(--radius-xl) var(--radius-xl)',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
           }}
         >
-          <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            For portfolio distribution enquiries, email zirdilialifescience@gmail.com
+          <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', flex: '1 1 auto', minWidth: 0, wordBreak: 'break-word' }}>
+            For enquiries: zirdilialifescience@gmail.com
           </div>
           <button
             onClick={() => {
@@ -219,7 +224,7 @@ export function PortfolioModal({ isOpen, onClose, initialCategory = 'all' }) {
               }
             }}
             className="btn btn-primary"
-            style={{ padding: '0.6rem 1.25rem', fontSize: '0.875rem' }}
+            style={{ padding: '0.6rem 1.25rem', fontSize: '0.875rem', whiteSpace: 'nowrap', flexShrink: 0 }}
           >
             Partner With Us
             <ArrowRight size={16} />
@@ -244,8 +249,9 @@ export function AboutModal({ isOpen, onClose }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.5rem',
+        padding: 'clamp(0.5rem, 3vw, 1.5rem)',
         animation: 'fadeIn 0.3s ease',
+        boxSizing: 'border-box',
       }}
       onClick={onClose}
     >
@@ -258,20 +264,23 @@ export function AboutModal({ isOpen, onClose }) {
           maxWidth: '750px',
           maxHeight: '90vh',
           overflowY: 'auto',
+          overflowX: 'hidden',
           boxShadow: '0 25px 50px rgba(0,0,0,0.25)',
           border: '1px solid rgba(11, 77, 162, 0.15)',
+          boxSizing: 'border-box',
         }}
       >
         <div
           style={{
-            padding: '1.75rem 2rem',
+            padding: 'clamp(1rem, 4vw, 1.75rem) clamp(1rem, 4vw, 2rem)',
             borderBottom: '1px solid rgba(0,0,0,0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            gap: '1rem',
           }}
         >
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', margin: 0 }}>
+          <h3 style={{ fontSize: 'clamp(1.15rem, 4vw, 1.5rem)', fontWeight: 800, color: 'var(--text-main)', margin: 0, wordBreak: 'break-word' }}>
             About Zirdilia Life Science
           </h3>
           <button
@@ -283,18 +292,20 @@ export function AboutModal({ isOpen, onClose }) {
               borderRadius: '50%',
               width: '36px',
               height: '36px',
+              minWidth: '36px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
+              flexShrink: 0,
             }}
           >
             <X size={20} />
           </button>
         </div>
 
-        <div style={{ padding: '2rem' }}>
-          <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-primary-blue)', marginBottom: '1rem' }}>
+        <div style={{ padding: 'clamp(1rem, 4vw, 2rem)' }}>
+          <h4 style={{ fontSize: 'clamp(1.1rem, 4vw, 1.25rem)', fontWeight: 700, color: 'var(--color-primary-blue)', marginBottom: '1rem' }}>
             Empowering Health, Every Day.
           </h4>
 
@@ -311,7 +322,7 @@ export function AboutModal({ isOpen, onClose }) {
               display: 'flex',
               flexDirection: 'column',
               gap: '1.25rem',
-              padding: '1.5rem',
+              padding: 'clamp(1rem, 3vw, 1.5rem)',
               borderRadius: 'var(--radius-lg)',
               background: 'var(--bg-secondary)',
               border: '1px solid rgba(11, 77, 162, 0.1)',
@@ -375,7 +386,8 @@ export function PolicyModal({ isOpen, onClose, type = 'privacy' }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.5rem',
+        padding: 'clamp(0.5rem, 3vw, 1.5rem)',
+        boxSizing: 'border-box',
       }}
       onClick={onClose}
     >
@@ -388,14 +400,16 @@ export function PolicyModal({ isOpen, onClose, type = 'privacy' }) {
           maxWidth: '650px',
           maxHeight: '85vh',
           overflowY: 'auto',
-          padding: '2.5rem',
+          overflowX: 'hidden',
+          padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+          boxSizing: 'border-box',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-          <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', gap: '1rem' }}>
+          <h3 style={{ fontSize: 'clamp(1.15rem, 4vw, 1.4rem)', fontWeight: 800, color: 'var(--text-main)', margin: 0, wordBreak: 'break-word' }}>
             {type === 'privacy' ? 'Privacy Policy' : 'Terms & Conditions'}
           </h3>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer' }}><X size={20} /></button>
+          <button onClick={onClose} style={{ background: 'rgba(0,0,0,0.05)', border: 'none', borderRadius: '50%', width: '36px', height: '36px', minWidth: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}><X size={20} /></button>
         </div>
 
         <div style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7 }}>
