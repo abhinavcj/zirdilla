@@ -114,10 +114,13 @@ export default function Footer({ onOpenPolicyModal }) {
                 <div>
                   <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: '700', textTransform: 'uppercase' }}>HEADQUARTERS</div>
                   <div style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: '700', marginBottom: '0.25rem' }}>
-                    Kerala, India
+                    Mumbai, Maharashtra
                   </div>
                   <div style={{ fontSize: '0.85rem', color: '#94A3B8', lineHeight: 1.5 }}>
-                    Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                    Haware Intelligentia Business Park, Sector 24, Vashi, Navi Mumbai, Maharashtra 400703
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#94A3B8', marginTop: '0.2rem' }}>
+                    +91 9860875134
                   </div>
                 </div>
               </div>
@@ -126,8 +129,11 @@ export default function Footer({ onOpenPolicyModal }) {
                 <Truck size={20} color="#34D399" style={{ marginTop: '0.2rem', flexShrink: 0 }} />
                 <div>
                   <div style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: '700', textTransform: 'uppercase' }}>OPERATIONAL OFFICE</div>
-                  <div style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: '700' }}>
-                    Kerala, India (CFA & Logistics Center)
+                  <div style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: '700', marginBottom: '0.25rem' }}>
+                    Kerala, India
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#94A3B8', lineHeight: 1.5 }}>
+                    Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
                   </div>
                 </div>
               </div>
@@ -161,7 +167,7 @@ export default function Footer({ onOpenPolicyModal }) {
                 color: '#CBD5E1',
               }}
             >
-              Headquarters: Kerala, India | Operational Office (CFA & Logistics Center)
+              HQ: Mumbai, Maharashtra | Operational: Kerala, India
             </div>
           </div>
         </div>

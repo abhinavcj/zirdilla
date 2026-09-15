@@ -110,10 +110,13 @@ export default function Contact({ onSubmitSuccess }) {
                     Headquarters
                   </div>
                   <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem', marginBottom: '0.3rem' }}>
-                    Kerala, India
+                    Mumbai, Maharashtra
                   </div>
                   <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.55 }}>
-                    Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                    Haware Intelligentia Business Park, Sector 24, Vashi, Navi Mumbai, Maharashtra 400703
+                  </div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.25rem' }}>
+                    +91 9860875134
                   </div>
                 </div>
               </div>
@@ -147,8 +150,11 @@ export default function Contact({ onSubmitSuccess }) {
                   <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-primary-cyan)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Operational Office
                   </div>
-                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>
-                    Kerala, India <span style={{ fontSize: '0.85rem', color: 'var(--color-primary-blue)', fontWeight: '600' }}>(CFA & Logistics Center)</span>
+                  <div style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem', marginBottom: '0.3rem' }}>
+                    Kerala, India
+                  </div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.55 }}>
+                    Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
                   </div>
                 </div>
               </div>
