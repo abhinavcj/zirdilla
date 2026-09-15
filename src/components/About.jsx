@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Handshake, HeartHandshake, MapPin, Building2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Handshake, HeartHandshake, ArrowRight } from 'lucide-react';
 
 export default function About({ onOpenAboutModal }) {
   const highlights = [
@@ -62,51 +62,6 @@ export default function About({ onOpenAboutModal }) {
                   objectFit: 'cover',
                   display: 'block',
                 }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(180deg, transparent 40%, rgba(6, 17, 33, 0.6) 100%)',
-                }}
-              />
-
-              {/* Office Location Badge Overlay */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '1rem',
-                  left: '1rem',
-                  right: '1rem',
-                  background: 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(16px)',
-                  padding: '1rem',
-                  borderRadius: 'var(--radius-md)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-around',
-                  boxShadow: '0 10px 25px rgba(0,0,0,0.12)',
-                  border: '1px solid rgba(255, 255, 255, 0.8)',
-                  flexWrap: 'wrap',
-                  gap: '0.6rem',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Building2 size={18} color="var(--color-primary-blue)" style={{ flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontWeight: '600' }}>Headquarters</div>
-                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--text-main)' }}>Kerala, India</div>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <MapPin size={18} color="var(--color-primary-cyan)" style={{ flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: '0.675rem', color: 'var(--text-muted)', fontWeight: '600' }}>Operational Office</div>
-                    <div style={{ fontSize: '0.875rem', fontWeight: '700', color: 'var(--text-main)' }}>Kerala, India (CFA & Logistics)</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
