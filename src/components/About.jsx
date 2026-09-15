@@ -62,6 +62,7 @@ export default function About({ onOpenAboutModal }) {
                   objectFit: 'cover',
                   display: 'block',
                 }}
+              />
             </div>
           </div>
 
