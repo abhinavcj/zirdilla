@@ -88,7 +88,7 @@ export default function Navbar({ onOpenProductsModal }) {
             alt="Zirdilia Life Science Logo"
             className="brand-logo"
             style={{
-              height: scrolled ? '42px' : '48px',
+              height: scrolled ? '54px' : '62px',
               width: 'auto',
               transition: 'height 0.3s ease',
               objectFit: 'contain'
@@ -237,7 +237,7 @@ export default function Navbar({ onOpenProductsModal }) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: block !important; }
           .main-header { padding: 0.5rem 0 !important; }
-          .brand-logo { height: 38px !important; }
+          .brand-logo { height: 50px !important; }
         }
       `}</style>
     </header>
