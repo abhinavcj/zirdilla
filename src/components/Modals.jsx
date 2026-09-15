@@ -321,10 +321,11 @@ export function AboutModal({ isOpen, onClose }) {
               <Building2 size={24} color="var(--color-primary-blue)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
               <div>
                 <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary-blue)', textTransform: 'uppercase' }}>HEADQUARTERS</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Kerala, India</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Mumbai, Maharashtra</div>
                 <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.25rem', lineHeight: 1.5 }}>
-                  Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                  Haware Intelligentia Business Park, Sector 24, Vashi, Navi Mumbai, Maharashtra 400703
                 </div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.15rem' }}>+91 9860875134</div>
               </div>
             </div>
 
@@ -332,7 +333,10 @@ export function AboutModal({ isOpen, onClose }) {
               <Truck size={24} color="var(--color-primary-cyan)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
               <div>
                 <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary-cyan)', textTransform: 'uppercase' }}>OPERATIONAL OFFICE</div>
-                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Kerala, India (CFA & Logistics Center)</div>
+                <div style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.15rem' }}>Kerala, India</div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--text-body)', marginTop: '0.25rem', lineHeight: 1.5 }}>
+                  Maithri, House No 5, TC 61/1359, CGS Nagar, Pappanamcode, Thiruvananthapuram, Kerala, 695002
+                </div>
               </div>
             </div>
 
