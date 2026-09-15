@@ -353,7 +353,7 @@ export default function Contact({ onSubmitSuccess }) {
                         type="email"
                         name="email"
                         required
-                        placeholder="zirdilialifescience@gmail.com"
+                        placeholder=""
                         value={formData.email}
                         onChange={handleChange}
                         style={{
@@ -375,7 +375,7 @@ export default function Contact({ onSubmitSuccess }) {
                       <input
                         type="tel"
                         name="phone"
-                        placeholder="+91 7907706086"
+                        placeholder=""
                         value={formData.phone}
                         onChange={handleChange}
                         style={{
